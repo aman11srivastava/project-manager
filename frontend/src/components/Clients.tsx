@@ -4,6 +4,8 @@ import {loader} from "graphql.macro";
 import {Spinner, Table} from "react-bootstrap";
 import {ClientType} from "../utils/utils";
 import ClientRow from "./ClientRow";
+import AddClientModal from "./AddClientModal";
+import Projects from "./Projects";
 
 export const Clients = () => {
     const {data, loading, error} = useQuery(loader('../graphql/getClients.graphql'))
@@ -13,6 +15,8 @@ export const Clients = () => {
 
     return (
         <>
+            <AddClientModal/>
+            <Projects/>
             <Table className={"table-hover mt-3"}>
                 <thead>
                 <tr>

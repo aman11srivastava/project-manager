@@ -14,3 +14,20 @@ export interface clientStructure {
 export interface ClientType extends clientStructure {
     id: string
 }
+
+export enum ProjectStatus {
+    new = "Not Started",
+    progress = "In Progress",
+    completed = "Completed"
+}
+
+export interface ProjectStructure {
+    name: string
+    status: ProjectStatus
+    description: string
+    client: ClientType
+}
+
+export interface ProjectType extends ProjectStructure {
+    id: string
+}
