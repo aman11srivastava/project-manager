@@ -5,9 +5,12 @@ export const client = new ApolloClient({
     cache: new InMemoryCache()
 })
 
-export type ClientType = {
-    id: string
+export interface clientStructure {
     name: string
-    email: string
     phone: string
+    email: string
+}
+
+export interface ClientType extends clientStructure {
+    id: string
 }
